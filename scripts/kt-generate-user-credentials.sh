@@ -1,18 +1,21 @@
 #!/bin/bash
 
 if [[ $# -ne 3 ]]; then
-    echo "Usage: kt-generate-user-credentials.sh namespace secretname username"
+    echo "Usage: kt-generate-user-credentials.sh NAMESPACE SECRETNAME USERNAME"
     exit 2;
 fi
+
+# DESCRIPTION
+#
+# Will generate the secret SECRETNAME with the following keys:
+# * user, set to the USERNAME given
+# * password, a generated 32 character password
 
 set -e
 
 $(dirname $0)/utils/check-dependency.sh mktemp
 $(dirname $0)/utils/check-dependency.sh pwgen
 
-# Will generate the secret secretname with the following keys:
-# * user, set to the username given
-# * password, a generated 32 character password
 
 namespace=$1
 secretname=$2
