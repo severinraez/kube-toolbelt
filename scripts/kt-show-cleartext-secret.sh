@@ -13,6 +13,7 @@ set -e
 
 $(dirname $0)/utils/check-dependency.sh jq
 $(dirname $0)/utils/check-dependency.sh base64
+$(dirname $0)/utils/check-dependency.sh datamash
 
 namespace=$1
 secretname=$2
