@@ -31,7 +31,7 @@ function cleanup {
 trap cleanup EXIT
 
 echo -n $username > $username_file
-pwgen 32 1 > $password_file
+pwgen 32 1 | xargs echo -n > $password_file
 
 (
     set -x
