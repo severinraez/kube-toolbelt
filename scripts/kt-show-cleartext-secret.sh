@@ -7,7 +7,11 @@ fi
 
 # DESCRIPTION
 #
-# Will show the secret fields in cleartext.
+# Will show the secret values in cleartext.
+#
+# KNOWN LIMITATIONS
+#
+# Cannot handle secrets with multiline values.
 
 set -e
 
